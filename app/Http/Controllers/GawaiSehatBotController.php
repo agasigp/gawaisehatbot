@@ -54,9 +54,9 @@ class GawaiSehatBotController extends Controller
             foreach ($data_icd as $data) {
                 $botman->reply(
                     "Kode ICD10 : $data->KD_PENYAKIT \r\n" .
-                        "Kode ICD10 induk : $data->KD_ICD_INDUK \r\n" .
-                        "Penyakit : $data->PENYAKIT \r\n" .
-                        "Deskripsi : $data->DESCRIPTION"
+                    "Kode ICD10 induk : $data->KD_ICD_INDUK \r\n" .
+                    "Penyakit : $data->PENYAKIT \r\n" .
+                    "Deskripsi : $data->DESCRIPTION"
                 );
             }
         }
