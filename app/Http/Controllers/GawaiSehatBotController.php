@@ -4,26 +4,19 @@ namespace App\Http\Controllers;
 
 use BotMan\BotMan\BotMan;
 use Illuminate\Http\Request;
-use App\Repositories\DiseaseRepository;
+use App\Icd;
 
 class GawaiSehatBotController extends Controller
 {
-    protected $diseaseRepository;
-
-    public function __construct(DiseaseRepository $diseaseRepository)
-    {
-        $this->diseaseRepository = $diseaseRepository;
-    }
-
     public function getDiseasesByIcd(Botman $botman, $icd)
     {
-        $diseases = $this->diseaseRepository->getDiseasesByIcd($icd);
+        $diseases = Icd::diseasesByIcd($icd)->get();
         $this->showResult($botman, $diseases);
     }
 
     public function getDiseasesByName(Botman $botman, $name)
     {
-        $diseases = $this->diseaseRepository->getDiseasesByName($name);
+        $diseases = Icd::diseasesByName($name)->get();
         $this->showResult($botman, $diseases);
     }
 
