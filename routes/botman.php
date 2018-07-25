@@ -11,8 +11,8 @@ $botman->hears('/start', function ($bot) {
     $bot->reply('1. Kode ICD 10 : {kode_icd}');
     $bot->reply('2. Penyakit : {nama_penyakit}');
 });
-$botman->hears('Kode ICD 10 : {icd}', GawaiSehatBotController::class.'@getIcd');
-$botman->hears('Penyakit : {disease}', GawaiSehatBotController::class.'@getDisease');
+$botman->hears('Kode ICD 10 : {icd}', GawaiSehatBotController::class.'@getDiseasesByIcd');
+$botman->hears('Penyakit : {disease}', GawaiSehatBotController::class.'@getDiseasesByName');
 $botman->fallback(function ($bot) {
     $bot->reply('Maaf, perintah tidak dikenali. Berikut ini adalah perintah yang dikenali :');
     $bot->reply('1. Kode ICD 10 : {kode_icd}');
